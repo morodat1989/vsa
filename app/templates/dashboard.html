@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="space-y-6">
+    <h2 class="text-2xl font-bold text-gray-800">Dashboard Overview</h2>
+    
+    <!-- Thống kê nhanh -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div class="bg-white p-5 rounded-lg shadow border border-gray-200">
+            <div class="text-sm font-medium text-gray-500">Facebook Accounts</div>
+            <div class="text-2xl font-bold text-gray-900 mt-1">{{ accounts_count }}</div>
+        </div>
+        <div class="bg-white p-5 rounded-lg shadow border border-gray-200">
+            <div class="text-sm font-medium text-gray-500">Groups Managed</div>
+            <div class="text-2xl font-bold text-gray-900 mt-1">{{ groups_count }}</div>
+        </div>
+        <div class="bg-white p-5 rounded-lg shadow border border-gray-200">
+            <div class="text-sm font-medium text-gray-500">Marketplace Listings</div>
+            <div class="text-2xl font-bold text-gray-900 mt-1">0</div>
+        </div>
+        <div class="bg-white p-5 rounded-lg shadow border border-gray-200">
+            <div class="text-sm font-medium text-gray-500">Total Listings (BĐS)</div>
+            <div class="text-2xl font-bold text-blue-600 mt-1">{{ listings_count }}</div>
+        </div>
+    </div>
+
+    <!-- Quick Actions / Status -->
+    <div class="bg-white p-6 rounded-lg shadow border border-gray-200">
+        <h3 class="text-lg font-medium text-gray-800 mb-4">Trạng thái hệ thống</h3>
+        <p class="text-sm text-gray-600 mb-4">Hệ thống đang chạy ở chế độ Local-first. Dữ liệu được lưu trữ tại <code class="bg-gray-100 px-2 py-1 rounded text-red-500">data/local_db.sqlite</code>.</p>
+        <div class="flex space-x-3">
+            <a href="/listings" class="bg-blue-600 text-white px-4 py-2 rounded text-sm font-medium hover:bg-blue-700 transition">Quản lý Kho Tin BĐS</a>
+            <a href="/content" class="bg-gray-800 text-white px-4 py-2 rounded text-sm font-medium hover:bg-gray-700 transition">Tạo Nội Dung AI</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
