@@ -25,6 +25,11 @@ class Account(Base):
     cookie = Column(Text, nullable=True)
     status = Column(String, default="Hoạt động")
 
+    fb_name = Column(String, nullable=True)
+    avatar_url = Column(Text, nullable=True)
+    profile_name = Column(String, nullable=True)
+    cdp_port = Column(Integer, nullable=True)
+
 FBAccount = Account
 
 class Group(Base):
